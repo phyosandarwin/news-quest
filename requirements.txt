@@ -4,3 +4,4 @@ protobuf==5.27.2
 pycountry==24.6.1
 Requests==2.32.3
 streamlit==1.36.0
+google-generativeai
