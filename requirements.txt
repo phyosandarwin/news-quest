@@ -1,8 +1,8 @@
-beautifulsoup4==4.12.3
-pandas==2.2.2
-protobuf==5.27.2
-pycountry==24.6.1
-Requests==2.32.3
-streamlit==1.36.0
-protobuf==4.23.2
-google-generativeai==0.7.0
+beautifulsoup4
+google-generativeai
+pandas
+protobuf
+pycountry
+Requests
+streamlit
+
