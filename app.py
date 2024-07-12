@@ -178,7 +178,6 @@ def main():
     keyword_news = None
     category_news = None
 
-    st.toast("Search your news article on the SIDEBAR!", icon="🤗")
     with st.sidebar:
         st.title("📰 News Aggregator")
         tabs = st.tabs(["Search by Keyword", "Search by Category"])
