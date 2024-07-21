@@ -22,12 +22,12 @@ if "article_summary" not in st.session_state:
 if "quiz_data_list" not in st.session_state:
     st.session_state["quiz_data_list"] = None
 
+genai.configure(api_key=st.secrets['gemini']['GOOGLE_API_KEY'])
 
 def generate_summary():
     url = st.session_state["selected_article_url"]
     article_text = parse_article(url)
     if article_text:
-        genai.configure(api_key=st.secrets['gemini']['API_KEY'])
         first_model = genai.GenerativeModel('gemini-1.0-pro')
         first_chat = first_model.start_chat(history=[])
         try:
@@ -42,7 +42,6 @@ def generate_questions():
     if "article_summary" in st.session_state:
         summary = st.session_state["article_summary"]
         with st.spinner("Crafting your quiz..."):
-            genai.configure(api_key=st.secrets['gemini']['API_KEY'])
             second_model = genai.GenerativeModel('gemini-1.0-pro')
             second_chat = second_model.start_chat(history=[])
             quiz_data_list = generate_quiz_questions(summary, second_chat)
